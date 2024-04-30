@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "54015877181",
+    "project_id": "oilskimmer-5fc93",
+    "storage_bucket": "oilskimmer-5fc93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54015877181:android:c213ccfce171e1e276ca54",
+        "android_client_info": {
+          "package_name": "com.example.oil_skimmer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8loQYmZiud-4gDhAgnHTJIhasdyaiZPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
