@@ -13,8 +13,8 @@ import 'home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,10 @@ class HomeView extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.amber,
-            title: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Home"),
-                IsOnlineWidget(),
-              ],
-            ),
+            title: const Text('Home'),
+            actions: const [
+              IsOnlineWidget(),
+            ],
           ),
           body: SafeArea(
             child: SizedBox(
@@ -62,9 +59,10 @@ class HomeView extends StatelessWidget {
                             )
                           : Container(
                               child: ProgressBarcircular(
-                                value: model.node!.oil / 10,
+                                value: model.calculateValues(),
                               ),
                             ),
+                      verticalSpaceMedium, // Added space
                       Container(
                         width: 200,
                         height: 200,
@@ -111,46 +109,51 @@ class HomeView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      verticalSpaceMedium,
+
                       const Divider(
                         thickness: 2,
                         indent: 25,
                         endIndent: 25,
                       ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           horizontalSpaceMedium,
                           BeltButton(
+                            buttonName: "Belt",
                             ontap: model.toggleBeltButtonText,
                             text: model.beltButtonText,
+                            icon: Icons.conveyor_belt,
                           ),
-                          const Text("Belt"),
-                          horizontalSpaceMedium,
                         ],
                       ),
+                      verticalSpaceSmall,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          horizontalSpaceMedium,
                           BeltButton(
+                            buttonName: 'Pump',
                             ontap: model.togglePumpButtonText,
                             text: model.pumpButtonText,
+                            icon: Icons.heat_pump_outlined,
                           ),
-                          const Text("Pump"),
                         ],
                       ),
+                      verticalSpaceSmall,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          horizontalSpaceMedium,
                           BeltButton(
+                            buttonName: 'Dump',
                             ontap: model.toggleDumpButtonText,
                             text: model.dumpButtonText,
+                            icon: Icons.delete_forever_outlined,
                           ),
-                          const Text("Dump"),
-                          horizontalSpaceMedium,
                         ],
                       ),
-                      verticalSpaceMassive,
                     ],
                   ),
                 ),

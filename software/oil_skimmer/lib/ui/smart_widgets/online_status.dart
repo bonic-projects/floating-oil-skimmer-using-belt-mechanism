@@ -19,7 +19,7 @@ class IsOnlineWidget extends StatelessWidget {
               children: [
                 Text(
                   'Online',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
                 Icon(
                   Icons.circle,
@@ -35,7 +35,7 @@ class IsOnlineWidget extends StatelessWidget {
             padding: EdgeInsets.only(right: 8.0),
             child: Text(
               'Offline',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.black, fontSize: 25),
             ),
           ));
         }

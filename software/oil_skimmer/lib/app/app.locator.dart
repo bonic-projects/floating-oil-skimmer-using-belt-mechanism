@@ -11,8 +11,8 @@ import 'package:stacked_services/src/dialog/dialog_service.dart';
 import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
-import '../services/belt_database_service.dart';
-import '../services/device_database_service.dart';
+import '../models/device_data.dart';
+import '../services/database_service.dart';
 
 final locator = StackedLocator.instance;
 
@@ -28,6 +28,6 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => BottomSheetService());
   locator.registerLazySingleton(() => DialogService());
   locator.registerLazySingleton(() => NavigationService());
-  locator.registerLazySingleton(() => DeviceDatabaseService());
-  locator.registerLazySingleton(() => BeltDatabaseService());
+  locator.registerLazySingleton(() => DatabaseService());
+  locator.registerLazySingleton(() => DeviceMovement());
 }

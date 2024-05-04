@@ -1,17 +1,15 @@
 import 'dart:async';
 import 'package:oil_skimmer/models/device_data.dart';
-import 'package:oil_skimmer/services/belt_database_service.dart';
-import 'package:oil_skimmer/services/device_database_service.dart';
+import 'package:oil_skimmer/services/database_service.dart';
+
 import 'package:stacked/stacked.dart';
 
 import '../../../app/app.locator.dart';
 
-
-
 class HomeViewModel extends BaseViewModel {
   //final log = getLogger('StatusWidget');
 
-  final _dbService = locator<BeltDatabaseService>();
+  final _dbService = locator<DatabaseService>();
 
   DeviceReading? get node => _dbService.node;
 
