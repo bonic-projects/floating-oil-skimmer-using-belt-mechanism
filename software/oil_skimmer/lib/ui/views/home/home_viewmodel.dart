@@ -93,11 +93,8 @@ class HomeViewModel extends ReactiveViewModel {
     double oil = node!.oil.toDouble();
     double full = 11;
 
-    if (oil > full) {
-      return full;
-    } else {
-      double percentage = ((full - oil) / full) * 100;
-      return percentage.roundToDouble();
-    }
+    if (oil > full) oil = full;
+    double percentage = ((full - oil) / full) * 100;
+    return percentage.roundToDouble();
   }
 }
